@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>MFS Cashout Charge</title>
+    <link rel="icon" type="png" href=".\image/bangladesh.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex justify-center text-black font-bold font-[arial] ">
+    <div class="main-body h-170  w-98 rounded-xl ">
+        <div class="header-section ">
+                    <div class=" bg-[#C5E1A5] mb-2 mt-2 font-sans font-bold text-2xl text-white justify-items-center flex p-6 rounded-md">
+            Cashout Charge Calculator
+        </div>
+        <div class="logo-section   h-40 flex flex-row gap-1  mt-2">
+            
+            <div class="logo-bkash rounded-t-md p-1  bg-[#FFCDD2]">
+                <img src=.\image/bkash.png>
+            <p class='text-[#DE166E] mt-4 ml-2 text-xl'>Bkash</p>
+            </div>
+            <div class="logo-rocket  p-1 rounded-t-md bg-[#DBBEDD]">
+                <img src=.\image/rocket.png>
+            <p class='text-[#8B3493] mt-4 ml-1 text-xl'>Rocket</p>
+            </div>
+            <div class="logo-nagad p-2 pt-3 rounded-t-md bg-[#FFF2CC]">
+                <img src=.\image/nagad.png>
+            <p class='text-[#F02425] mt-4 ml-1 text-xl'>Nagad</p>
+            </div>
+            <div class="logo-upay  rounded-t-md bg-[#FFD602]">
+                <img src=.\image/upay.png>
+            <p class='text-[#124A97] mt-4 ml-3 text-xl'>Upay</p>
+            </div>
+            
+            
+            
+        </div>
+        </div>
+
+        <div class="from-result-section bg-[#FFCDD2] h-162.5 w-98 pt-8  rounded-b-xl">
+            <form class="ml-4 justify-items-center ">
+
+            <input class="outline-none p-8 text-4xl w-88 mb-1 ml-1  bg-white rounded-md text-black" type="text" placeholder="৳ Amount" id="enter-amount">
+            <p class='mt-2  text-2xl'>Cashout rate : 1.25%</p>
+        </form>
+        <div class="calculate-btn flex justify-center">
+            <button class="text-white  mb-2 mt-4 bg-sky-500 transition-[0.10s] hover:bg-sky-700 rounded-full p-3 text-4xl  h-25 w-70 cursor-pointer border-solid border-black">Calculate</button>
+        </div>
+        <div class="result-section">
+                    <h3 class="flex justify-center text-5xl mt-2 mb-3  font-mono"><span>Result</span></h3>
+        <div class=" ml-5 text-2xl font-mono leading-10">
+            <p> Cashout Charge is: <br> <span class="ml-15 text-4xl ">৳ 370000.12 </span></p>
+            <p>With total fee: <br><span class="ml-15 text-4xl "> ৳ 1370000.12</span></p>
+            <p>Without total fee: <br><span class="ml-15 text-4xl "> ৳ 9620000.88</span></p>
+        </div>
+        </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
