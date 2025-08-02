@@ -1,0 +1,11 @@
+.result-section:before{
+    content:"";
+    width: 350px;
+    height: 3px;
+    background-color: #b61251;
+    position:absolute;
+    margin-left:20px;
+    border-radius: 50%;
+    
+    
+}
