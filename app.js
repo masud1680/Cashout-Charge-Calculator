@@ -43,10 +43,11 @@ const pathaopayWithdrowBank = 1.5;
 
 function calculator(value, parcentage) {
   setTimeout(() => {
- 
-      var charge = (value * parcentage) / 100;
-      var withCharge = value + charge;
-      var withOutCharge = value - charge;
+      let val = parseFloat(value);
+      let parcent = parcentage;
+      let charge =(val * parcent) / 100;
+      let withCharge = (val + charge);
+      let withOutCharge = (val - charge);
 
       displayResult(charge, withCharge, withOutCharge,parcentage);
     
@@ -138,3 +139,4 @@ var inputBox = document.getElementById("enter-amount");
    getInput();
    
 });
+
