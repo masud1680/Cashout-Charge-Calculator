@@ -1,63 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>MFS Cashout Charge</title>
-    <link rel="icon" type="png" href=".\image/bangladesh.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="flex justify-center text-black font-bold font-[arial] ">
-    <div class="main-body h-170  w-98 rounded-xl ">
-        <div class="header-section ">
-                    <div class=" bg-[#C5E1A5] mb-2 mt-2 font-sans font-bold text-2xl text-white justify-items-center flex p-6 rounded-md">
-            Cashout Charge Calculator
-        </div>
-        <div class="logo-section   h-40 flex flex-row gap-1  mt-2">
-            
-            <div class="logo-bkash rounded-t-md p-1  bg-[#FFCDD2]">
-                <img src=.\image/bkash.png>
-            <p class='text-[#DE166E] mt-4 ml-2 text-xl'>Bkash</p>
-            </div>
-            <div class="logo-rocket  p-1 rounded-t-md bg-[#DBBEDD]">
-                <img src=.\image/rocket.png>
-            <p class='text-[#8B3493] mt-4 ml-1 text-xl'>Rocket</p>
-            </div>
-            <div class="logo-nagad p-2 pt-3 rounded-t-md bg-[#FFF2CC]">
-                <img src=.\image/nagad.png>
-            <p class='text-[#F02425] mt-4 ml-1 text-xl'>Nagad</p>
-            </div>
-            <div class="logo-upay  rounded-t-md bg-[#FFD602]">
-                <img src=.\image/upay.png>
-            <p class='text-[#124A97] mt-4 ml-3 text-xl'>Upay</p>
-            </div>
-            
-            
-            
-        </div>
+    <link rel="icon" type="png" href=".\image/bangladesh.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="  text-black font-bold font-[arial]">
+    <div
+      class="bg-[#C5E1A5]  md:w-full  mb-3 mt-1 font-sans font-bold text-2xl text-white grid place-items-center  p-4 rounded-md"
+    >
+      Cashout Charge Calculator
+    </div>
+    <div class="place-items-center grid md:grid-cols-2 sm:grid-cols-1 gap-0.5">
+      <div class="main-body sm:h-60 md:h-120 w-98 rounded-xl">
+
+        <div
+          class="logo-section grid h-35 w-98 grid-cols-4 place-items-stretch gap-0.5 cursor-pointer"
+        >
+          <div class="logo-bkash rounded-t-md p-1 bg-[#FFCDD2]">
+            <img class='pt-2' src=.\image/bkash.png>
+            <p class="text-[#DE166E] place-items-center grid text-xl">
+              Bkash
+            </p>
+          </div>
+          <div class="logo-rocket rounded-t-md bg-[#DBBEDD]">
+            <img src=.\image/rocket.png>
+            <p class="text-[#8B3493] place-items-center grid text-xl">
+              Rocket
+            </p>
+          </div>
+          <div class="logo-nagad rounded-t-md bg-[#FFF2CC]">
+            <img src=.\image/nagad.png>
+            <p class="text-[#F02425] place-items-center grid text-xl">
+              Nagad
+            </p>
+          </div>
+          <div class="logo-pathaopay pt-4 rounded-t-md bg-[#0062]">
+            <img class='h-30 p-' src=.\image/pathaopay.png>
+            <!--  <p class='text-[#124A97] mt-1 ml-5 text-xl'>pathaopay</p> -->
+          </div>
         </div>
 
-        <div class="from-result-section bg-[#FFCDD2] h-162.5 w-98 pt-8  rounded-b-xl">
-            <form class="ml-4 justify-items-center ">
+        <div
+          class="from-section bg-[#FFCDD2]  md:h-85 w-98 pt-8 rounded-b-xl"
+        >
+          <div class="grid place-items-center">
+            <select
+              name="dropdown"
+              id="dropdown-bkash"
+              onchange="clickEventOptionBkash()"
+              class="block mb-4 w-50 h-8 border border-2 rounded-md border-[#DB126A] shadow-md focus:outline-none"
+            >
+              <!--<option value="">Select Option</option>-->
+              <option value="bkashAgent">Bkash Agent</option>
+              <option value="bkashPriyoAgent">Bkash Priyo Agent</option>
+            </select>
+            <select
+              name="dropdown"
+              id="dropdown-rocket"
+              onchange="clickEventOptionRocket()"
+              class="hidden mb-4 w-50 h-8 border border-2 rounded-md border-[#8C3494] shadow-md focus:outline-none"
+            >
+              <!--<option value="">Select Option</option>-->
+              <option value="rocketAgent">Rocket Agent</option>
+              <option value="rocketAtm">DBBL ATM</option>
+            </select>
+          </div>
 
-            <input class="outline-none p-8 text-4xl w-88 mb-1 ml-1  bg-white rounded-md text-black" type="text" placeholder="৳ Amount" id="enter-amount">
-            <p class='mt-2  text-2xl'>Cashout rate : 1.25%</p>
-        </form>
-        <div class="calculate-btn flex justify-center">
-            <button class="text-white  mb-2 mt-4 bg-sky-500 transition-[0.10s] hover:bg-sky-700 rounded-full p-3 text-4xl  h-25 w-70 cursor-pointer border-solid border-black">Calculate</button>
+          <form class="ml-3 justify-items-center">
+            <input
+              autocomplete="off"
+              oninput="getInput()"
+              min="1"
+              max="100"
+              class="input-box outline-none p-6 text-3xl w-80 place-items-center grid bg-white rounded-md text-black"
+              type="number"
+              type="tel"
+              pattern="[0-9]*"
+              step="1"
+              placeholder="৳ Amount"
+              id="enter-amount"
+            />
+            <p class="mt-2 text-2xl">
+              Cashout rate : <span id="parcentage"> </span>%
+            </p>
+          </form>
+          <div class="calculate-btn grid-cols-5 p-2 place-items-center grid">
+            <button
+              class="calculate-button1 text-white place-items-center grid mb-2 mt-2 bg-sky-500 transition-[0.10s] hover:bg-sky-700 active:bg-sky-700 rounded-full text-xl h-8 w-16 cursor-pointer border-solid border-black"
+            >
+              1,000
+            </button>
+            <button
+              class="calculate-button2 text-white place-items-center grid mb-2 mt-2 bg-sky-500 transition-[0.10s] hover:bg-sky-700 active:bg-sky-700 rounded-full text-xl h-8 w-16 cursor-pointer border-solid border-black"
+            >
+              2,000
+            </button>
+            <button
+              class="calculate-button3 mr-2 text-white place-items-center grid mb-2 mt-2 bg-sky-500 transition-[0.10s] hover:bg-sky-700 active:bg-sky-700 rounded-full text-xl h-8 w-16 cursor-pointer border-solid border-black"
+            >
+              5,000
+            </button>
+            <button
+              class="calculate-button4 mr-2 text-white place-items-center grid mb-2 mt-2 bg-sky-500 transition-[0.10s] hover:bg-sky-700 active:bg-sky-700 rounded-full text-xl h-8 w-19 cursor-pointer border-solid border-black"
+            >
+              10,000
+            </button>
+            <button
+              class="calculate-button5 text-white place-items-center grid mb-2 mt-2 bg-sky-500 transition-[0.10s] hover:bg-sky-700 active:bg-sky-700 rounded-full text-xl h-8 w-19 cursor-pointer border-solid border-black"
+            >
+              15,000
+            </button>
+            <!--     <button class="calculate-button text-white  place-items-center grid mb-2 mt-4 bg-sky-500 transition-[0.10s] hover:bg-sky-700 rounded-full  text-xl  h-8 w-15 cursor-pointer border-solid border-black">25,000</button>
+            <button class="calculate-button text-white  place-items-center grid mb-2 mt-4 bg-sky-500 transition-[0.10s] hover:bg-sky-700 rounded-full  text-xl  h-8 w-15 cursor-pointer border-solid border-black">30,000</button>
+        -->
+          </div>
         </div>
-        <div class="result-section">
-                    <h3 class="flex justify-center text-5xl mt-2 mb-3  font-mono"><span>Result</span></h3>
-        <div class=" ml-5 text-2xl font-mono leading-10">
-            <p> Cashout Charge is: <br> <span class="ml-15 text-4xl ">৳ 00 </span></p>
-            <p>With total fee: <br><span class="ml-15 text-4xl "> ৳ 00</span></p>
-            <p>Without total fee: <br><span class="ml-15 text-4xl "> ৳ 00</span></p>
+      </div>
+
+      <div class="result-section bg-[#FFCDD2]  sm:h-100 md:h-120 rounded-md w-98  pt-8 rounded-b-xl">
+        <h3 class="text-4xl mt-4 mb-3 place-items-center grid font-mono">
+          <span>Result</span>
+        </h3>
+        <div class="ml-5 text-xl font-mono leading-10">
+          <p>Charge: <span id="charge"> </span></p>
+          <p>With Charge: <span id="withCharge"> </span></p>
+          <p>Without Charge: <span id="withOutCharge"> </span></p>
         </div>
-        </div>
-        </div>
+        
+        <footer class="grid place-content-center pt-5 pb-5">
+          <p class="text-wrap text-sm w-94">
+            Disclaimer: This site is not affiliated with bKash, Rocket, Nagad, or
+            pathaopay and related banks. All the names, and logos of the companies are
+            used for information purpose only. The cashout fee of services may
+            change from time to time and may not be updated in this project, so
+            please check out the app and official websites for an updated rate.
+          </p>
+          <div class="grid place-content-center mt-3 ">
+            <h3> Developed by :
+            <a class="underline" href="https://portfolio-seven-dun-30.vercel.app/">Portfolio</a>
+            </h3>
+          </div>
+        </footer>
+      </div>
     </div>
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>
