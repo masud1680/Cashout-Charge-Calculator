@@ -1,0 +1,19 @@
+.result-section:before{
+    content:"";
+    width: 350px;
+    height: 3px;
+    background-color: #b61251;
+    position:absolute;
+    margin-left:20px;
+    border-radius: 50%;
+    
+    
+}
+
+
+    .input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
