@@ -1,1 +1,1 @@
-Live Link :--- https://masud1680.github.io/Cashout-Charge-Calculator/
+Live Link :--- https://cashout-charge-calculator.vercel.app/
